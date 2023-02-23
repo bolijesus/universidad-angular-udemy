@@ -10,4 +10,8 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class PersonasComponent {}
+export class PersonasComponent {
+
+  deshabilitar:boolean = true
+
+}

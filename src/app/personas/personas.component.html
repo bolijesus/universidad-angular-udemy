@@ -10,7 +10,7 @@
 
       <label for="">Titulo Persona</label>
         <input type="text" class="form-control" #entrada
-         (input)="modificarTitulo($event)">
+         [(ngModel)]='titulo'>
          {{titulo}}
     </div>
   </div>

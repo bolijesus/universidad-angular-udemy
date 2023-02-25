@@ -1,14 +1,9 @@
 <div class="container">
-  <p>
-    Nombre: {{nombre}}
-    Apellido: {{apellido}}
-    Edad: {{getEdad()}}
-  </p>
-
-  <!-- https://angular.io/guide/template-reference-variables -->
-  <div (keyup)="0">
-    <label for="">Repetidor:</label>
-    <input type="text" #entrada/>
-    {{entrada.value}}
+  <div class="row">
+    <div class="col">
+      <div>
+        {{ indice + 1 }}: {{ persona.nombre }} {{ persona.apellido }}
+      </div>
+    </div>
   </div>
 </div>

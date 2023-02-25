@@ -7,9 +7,10 @@ import { PersonaComponent } from './persona/persona.component'
 import { FormsModule } from '@angular/forms';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { ResultadoComponent } from './resultado/resultado.component';
 @NgModule({
   declarations: [
-    AppComponent, PersonasComponent, PersonaComponent, CalculadoraComponent, FormularioComponent
+    AppComponent, PersonasComponent, PersonaComponent, CalculadoraComponent, FormularioComponent, ResultadoComponent
   ],
   imports: [
     BrowserModule,

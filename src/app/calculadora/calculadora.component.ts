@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculadora.component.css'],
 })
 export class CalculadoraComponent {
-  resultado:number = 0;
-
+  
+  resultadoSuma:number = 0;
+  
    suma(resultado:number):void {
-    this.resultado = resultado;
+    this.resultadoSuma = resultado;
   }
 }

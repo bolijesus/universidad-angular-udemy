@@ -21,8 +21,6 @@
 <div class="container">
   <h1>Calculadora Two way bindig</h1>
   <app-formulario (sumando)="suma($event)"></app-formulario>
-  <div class="">
-    <label for="">Resultado: {{resultado}}</label>
-  </div>
+  <app-resultado [resultado]="resultadoSuma"></app-resultado>
 </div>
 

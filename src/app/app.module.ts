@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { PersonasComponent } from './personas/personas.component';
 import { PersonaComponent } from './persona/persona.component'
 import { FormsModule } from '@angular/forms';
+import { FormularioComponent } from './formulario/formulario.component';
 @NgModule({
   declarations: [
-    AppComponent, PersonasComponent, PersonaComponent
+    AppComponent, PersonasComponent, PersonaComponent, FormularioComponent
   ],
   imports: [
     BrowserModule,

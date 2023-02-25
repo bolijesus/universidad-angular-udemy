@@ -1,4 +1,4 @@
-<!-- Variable binding -->
+<!-- Variable binding
 <div class="container">
   <h1>Calculadora Variable binding</h1>
   <div class="form-group">
@@ -15,23 +15,14 @@
   <button type="button" class="btn btn-primary"
     (click)="sumar_variable_binding(+operandoAbinding.value, +operandoBbinding.value)"
   >Sumar</button>
-</div>
+</div> -->
 
 <!-- Two way bindig -->
 <div class="container">
   <h1>Calculadora Two way bindig</h1>
-  <div class="form-group">
-    <label for="">Numero a:</label>
-    <input [(ngModel)]="operandoA" type="number" class="form-control" placeholder="agrega un numero">
-  </div>
-  <div class="form-group">
-    <label for="">Numero b:</label>
-    <input [(ngModel)]="operandoB" type="number" class="form-control" placeholder="agrega un numero">
-  </div>
+  <app-formulario (sumando)="suma($event)"></app-formulario>
   <div class="">
     <label for="">Resultado: {{resultado}}</label>
   </div>
-  <button type="submit" class="btn btn-primary"
-    (click)="sumar()"
-  >Sumar</button>
 </div>
+

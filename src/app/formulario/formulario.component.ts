@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef} from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Persona } from '../persona.model';
 import { LogginService } from '../LogingService.service';
 import { PersonasService } from '../personas.service';
@@ -10,14 +10,16 @@ import { PersonasService } from '../personas.service';
 })
 export class FormularioComponent {
 
-  @ViewChild('nombreRef') nombre:ElementRef = new ElementRef(null);
-  @ViewChild('apellidoRef') apellido:ElementRef = new ElementRef(null);
+  @ViewChild('nombreRef') nombre: ElementRef = new ElementRef(null);
+  @ViewChild('apellidoRef') apellido: ElementRef = new ElementRef(null);
 
-  constructor(private logingService:LogginService, private personasServices:PersonasService){
-
+  constructor(private logingService: LogginService, private personasServices: PersonasService) {
+    this.personasServices.saludar.subscribe(
+      (indice: number) => alert("el indice es: " + indice)
+    );
   }
 
-  agregarPersona():void {
+  agregarPersona(): void {
     let persona1 = new Persona(this.nombre.nativeElement.value, this.apellido.nativeElement.value);
     this.personasServices.agregarPersona(persona1);
   }

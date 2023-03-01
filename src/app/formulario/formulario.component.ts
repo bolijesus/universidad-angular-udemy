@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
 import { Persona } from '../persona.model';
+import { LogginService } from '../LogingService.service';
 
 @Component({
   selector: 'app-formulario',
@@ -12,10 +13,13 @@ export class FormularioComponent {
   @ViewChild('nombreRef') nombre:ElementRef = new ElementRef(null);
   @ViewChild('apellidoRef') apellido:ElementRef = new ElementRef(null);
 
+  constructor(private logingService:LogginService){
+
+  }
+
   agregarPersona():void {
-    console.log(this.nombre);
-    
     let persona1 = new Persona(this.nombre.nativeElement.value, this.apellido.nativeElement.value);
+    this.logingService.enviaMensajeAConsola("Enviamos persona "+persona1.nombre);
     this.personaCreada.emit(persona1);
   }
 }

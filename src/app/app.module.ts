@@ -8,9 +8,10 @@ import { PersonaComponent } from './personas/persona/persona.component'
 import { FormularioComponent } from './personas/formulario/formulario.component';
 import { LogginService } from './LogingService.service';
 import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './error/error.component';
 @NgModule({
   declarations: [
-    AppComponent, PersonasComponent, PersonaComponent, FormularioComponent
+    AppComponent, PersonasComponent, PersonaComponent, FormularioComponent, ErrorComponent
   ],
   imports: [
     BrowserModule,

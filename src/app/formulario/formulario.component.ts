@@ -10,8 +10,8 @@ import { PersonasService } from '../personas.service';
 })
 export class FormularioComponent {
 
-  @ViewChild('nombreRef') nombre: ElementRef = new ElementRef(null);
-  @ViewChild('apellidoRef') apellido: ElementRef = new ElementRef(null);
+  nombre:string="";
+  apellido:string="";
 
   constructor(private logingService: LogginService, private personasServices: PersonasService) {
     this.personasServices.saludar.subscribe(
@@ -20,7 +20,7 @@ export class FormularioComponent {
   }
 
   agregarPersona(): void {
-    let persona1 = new Persona(this.nombre.nativeElement.value, this.apellido.nativeElement.value);
+    let persona1 = new Persona(this.nombre, this.apellido);
     this.personasServices.agregarPersona(persona1);
   }
 }

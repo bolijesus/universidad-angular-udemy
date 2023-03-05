@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona.model';
 import { LogginService } from '../LogingService.service';
 import { PersonasService } from '../personas.service';
-
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',
@@ -10,14 +10,11 @@ import { PersonasService } from '../personas.service';
 })
 export class PersonasComponent implements OnInit {
 
-  deshabilitar:boolean = false;
-  mensaje:string = 'No se ha agregado ninguna persona';
-  titulo:string = 'Ingeniero';
-  mostrar:boolean = false;
-
   personas: Persona[] = [];
 
-  constructor(private logingService:LogginService, private personasService:PersonasService){
+  constructor(private logingService:LogginService, private personasService:PersonasService,
+    private router:Router
+    ){
 
   }
 
@@ -25,9 +22,8 @@ export class PersonasComponent implements OnInit {
     this.personas = this.personasService.personas;
   }
 
-  agregarPersona(){
-    this.mostrar = true;
-    this.mensaje = 'Persona agregada';
+  agregar(){
+    this.router.navigate(['personas/agregar']);
   }
 
 }

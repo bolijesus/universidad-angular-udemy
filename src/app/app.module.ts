@@ -7,13 +7,15 @@ import { PersonaComponent } from './persona/persona.component'
 import { FormsModule } from '@angular/forms';
 import { FormularioComponent } from './formulario/formulario.component';
 import { LogginService } from './LogingService.service';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent, PersonasComponent, PersonaComponent, FormularioComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [LogginService],
   bootstrap: [AppComponent]

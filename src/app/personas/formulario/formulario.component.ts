@@ -15,11 +15,11 @@ export class FormularioComponent implements OnInit {
   apellido:string="";
   index:number = 0;
 
-  constructor(private logingService: LogginService, private personasServices: PersonasService,
+  constructor(private logingService: LogginService, private personasService: PersonasService,
     private router:Router,
     private route:ActivatedRoute
     ) {
-    this.personasServices.saludar.subscribe(
+    this.personasService.saludar.subscribe(
       (indice: number) => alert("el indice es: " + indice)
     );
   }
@@ -27,7 +27,7 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id'];
     if (this.index) {
-      let persona:Persona = this.personasServices.encontrarPersona(this.index);
+      let persona:Persona = this.personasService.encontrarPersona(this.index);
       this.nombre = persona.nombre;
       this.apellido = persona.apellido;
     }
@@ -36,9 +36,16 @@ export class FormularioComponent implements OnInit {
   onGuardarPersona(): void {
     let persona1 = new Persona(this.nombre, this.apellido);
     if (this.index) {
-      this.personasServices.modificarPersona(this.index, persona1);
+      this.personasService.modificarPersona(this.index, persona1);
     } else {
-      this.personasServices.agregarPersona(persona1);
+      this.personasService.agregarPersona(persona1);
+    }
+    this.router.navigate(['personas']);
+  }
+
+  eliminarPersona(){
+    if (this.index != null) {
+      this.personasService.eliminarPersona(this.index);
     }
     this.router.navigate(['personas']);
   }

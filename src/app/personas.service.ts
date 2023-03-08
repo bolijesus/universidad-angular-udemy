@@ -2,10 +2,11 @@ import { LogginService } from "./LogingService.service";
 import { Persona } from "./persona.model";
 import { Injectable, EventEmitter } from "@angular/core"
 import { FormularioComponent } from "./personas/formulario/formulario.component";
+import { DataServices } from "./data.services";
 
 @Injectable()
 export class PersonasService {
-    
+
     personas: Persona[] = [
         new Persona('Juan', 'Perez'),
         new Persona('Laura', 'Juarez'),
@@ -13,13 +14,15 @@ export class PersonasService {
 
     saludar = new EventEmitter<number>()
 
-    constructor(private logingService: LogginService) {
+    constructor(private logingService: LogginService,
+        private dataServices: DataServices) {
 
     }
 
     agregarPersona(persona: Persona): void {
         this.logingService.enviaMensajeAConsola("agregamos persona: " + persona);
         this.personas.push(persona);
+        this.dataServices.guardarPersonas(this.personas);
     }
 
     encontrarPersona(index: number) {
@@ -29,12 +32,12 @@ export class PersonasService {
     }
 
     modificarPersona(index: number, persona: Persona) {
-        let persona1:Persona = this.personas[index];
+        let persona1: Persona = this.personas[index];
         persona1.nombre = persona.nombre;
         persona1.apellido = persona.apellido;
     }
 
-    eliminarPersona(index:number) {
+    eliminarPersona(index: number) {
         this.personas.splice(index, 1);
-      }
+    }
 }

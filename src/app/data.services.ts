@@ -8,6 +8,10 @@ export class DataServices {
 
     }
 
+    cargarPersonas(){
+        return this.httpClient.get('https://uni-angular-app-personas-default-rtdb.firebaseio.com/datos.json');
+    }
+
     //Guardar personas
     guardarPersonas(personas: Persona[]) {
         this.httpClient.put('https://uni-angular-app-personas-default-rtdb.firebaseio.com/datos.json', personas)

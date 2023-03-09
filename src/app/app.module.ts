@@ -12,6 +12,8 @@ import { ErrorComponent } from './error/error.component';
 import {DataServices} from './data.services'
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 @NgModule({
   declarations: [
     AppComponent, PersonasComponent, PersonaComponent, FormularioComponent, ErrorComponent, LoginComponent
@@ -25,6 +27,7 @@ import { LoginComponent } from './login/login.component';
   providers: [
     LogginService, 
     DataServices,
+    LoginService,
   ],
   bootstrap: [AppComponent]
 })

@@ -20,4 +20,14 @@ export class DataServices {
                 error => console.log('Error al guardar personas: ' + error)
             );
     }
+
+    modificarPersona(index:number, persona:Persona){
+        let url:string;
+        url = 'https://uni-angular-app-personas-default-rtdb.firebaseio.com/datos/'+ index +'.json/'
+        this.httpClient.put(url, persona)
+        .subscribe(
+            response => console.log("Resultado de modificar el objeto persona:"+ response)            
+            ,error => console.log('Error en modificar persona:' + error)            
+        );
+    }
 }

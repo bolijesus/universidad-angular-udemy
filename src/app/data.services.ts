@@ -26,8 +26,18 @@ export class DataServices {
         url = 'https://uni-angular-app-personas-default-rtdb.firebaseio.com/datos/'+ index +'.json/'
         this.httpClient.put(url, persona)
         .subscribe(
-            response => console.log("Resultado de modificar el objeto persona:"+ response)            
-            ,error => console.log('Error en modificar persona:' + error)            
+            response => console.log("Resultado de modificar el objeto persona:"+ response),
+            error => console.log('Error en modificar persona:' + error)            
+        );
+    }
+
+    eliminarPersona(index:number){
+        let url:string;
+        url = 'https://uni-angular-app-personas-default-rtdb.firebaseio.com/datos/'+ index +'.json/';
+        this.httpClient.delete(url)
+        .subscribe(
+            response => console.log('resultado eliminar persona:' + response),
+            error => console.log('Error en eliminar persona:' + error)            
         );
     }
 }

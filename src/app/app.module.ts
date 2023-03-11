@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { LoginGuardian } from './login/login-guardian.service';
 @NgModule({
   declarations: [
     AppComponent, PersonasComponent, PersonaComponent, FormularioComponent, ErrorComponent, LoginComponent
@@ -28,6 +29,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
     LogginService, 
     DataServices,
     LoginService,
+    LoginGuardian
   ],
   bootstrap: [AppComponent]
 })
